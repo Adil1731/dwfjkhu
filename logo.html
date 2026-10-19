@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Map Widget</title>
+    <style>
+        /* Map Container */
+        .map-card {
+            width: 300px;
+            height: 300px;
+            background-color: #8cd6d9;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Simulated land shape using a simple curve or box */
+        .map-land {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40%;
+            background-color: #4ac7b7;
+            border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+        }
+ 
+        /* Pin Styling */
+        .pin {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: #ff5252;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .pin:hover {
+            transform: scale(1.3) rotate(-45deg);
+        }
+ 
+        /* Label Pop-up */
+        .pin .label {
+            position: absolute;
+            left: 20px;
+            bottom: -5px;
+            background: white;
+            padding: 4px 8px;
+            font-family: sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            color: #2b7a78;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            display: none;
+            transform: rotate(45deg);
+        }
+        .pin:hover .label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="map-card">
+        <div class="map-land"></div>
+        
+        <!-- Pin 1: Surf City -->
+        <div class="pin" style="top: 70%; left: 45%;">
+            <div class="label">Surf city</div>
+        </div>
+ 
+        <!-- Pin 2: Capital City -->
+        <div class="pin" style="top: 30%; left: 70%;">
+            <div class="label">Capital city</div>
+        </div>
+    </div>
+ 
+</body>
+</html>
